@@ -1,0 +1,122 @@
+{
+  "description": "Get data from remote Betty Blocks applications using remote models.",
+  "label": "Get Remote Model Data",
+  "category": "Integration",
+  "icon": {
+    "color": "Purple",
+    "name": "RemoteModelIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Object",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "params",
+      "label": "Params",
+      "info": "Parameters of the Data API query."
+    },
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "apiUrl",
+      "label": "Application data api URL",
+      "info": "The data api url of the app you want to fetch data from",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "Formatted like https://app-id.betty.app/api/runtime/app-uuid"
+      }
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "authProfile",
+      "label": "Authentication Profile UUID",
+      "info": "The UUID of the Authentication Profile that should be used to authenticate in the other application",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "e.g. cd73874489f24c8f96e34882fd20ac5c"
+      }
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "email",
+      "label": "Email",
+      "info": "The email that's going to be used to autheticate on the other app's Data API",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "john.doe@bettyblocks.com"
+      }
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "password",
+      "label": "Password",
+      "info": "The password that's going to be used to autheticate on the other app's Data API",
+      "advanced": false,
+      "configuration": {
+        "placeholder": ""
+      }
+    },
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "modelName",
+      "label": "Model name",
+      "info": "The name of the model in the source application you want to fetch data from.",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "e.g. Client"
+      }
+    },
+    {
+      "name": "retrieveType",
+      "label": "Retrieve Type",
+      "meta": {
+        "type": "Select",
+        "values": [
+          { "label": "Single Record", "value": "one" },
+          { "label": "Collection", "value": "all" }
+        ],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "parentMapping",
+      "label": "Mapping Parent models ",
+      "info": "KEY column = Parent model name in source application, VALUE column = name of the parent which has been added to the swagger file as integer property.",
+      "meta": {
+        "type": "Map"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Object"
+        }
+      },
+      "name": "response",
+      "label": "Response",
+      "info": "Response"
+    }
+  ],
+  "yields": "NONE"
+}
